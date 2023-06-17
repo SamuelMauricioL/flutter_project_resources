@@ -3,27 +3,31 @@ import 'package:flutter_project_resources/services/product_service.dart';
 import 'package:get/get.dart';
 
 class ProductController extends GetxController {
-  final _productApi = ProductService();
+  final _productService = ProductService();
 
   final RxList<ProductModel> _products = <ProductModel>[].obs;
   List<ProductModel> get products => _products;
 
-  void getProducts() {
-    _products.value = _productApi.getProductsFromApi();
+  Future<void> syncProducts() async {
+    await _productService.syncProducts();
+  }
+
+  void getProducts() async {
+    _products.value = await _productService.getProductsFromDb();
   }
 
   @override
   void onInit() {
-    getProducts();
+    syncProducts().then((_) => getProducts());
     super.onInit();
   }
 
   // set products(List<ProductModel> value) {
-  //   _products.value = value;
+  //
   // }
 
   // void addProduct(ProductModel product) {
-  //   _products.add(product);
+  //
   // }
 
   void removeProduct(ProductModel product) {
@@ -31,6 +35,6 @@ class ProductController extends GetxController {
   }
 
   // void clearProducts() {
-  //   _products.clear();
+  //
   // }
 }
