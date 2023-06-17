@@ -24,9 +24,7 @@ class ListViewProducts extends GetView<ProductController> {
             subtitle: Text(controller.products[index].description ?? ''),
             trailing: IconButton(
               icon: const Icon(Icons.delete),
-              onPressed: () {
-                controller.removeProduct(controller.products[index]);
-              },
+              onPressed: () {},
             ),
           );
         },

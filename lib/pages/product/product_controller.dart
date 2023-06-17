@@ -22,19 +22,19 @@ class ProductController extends GetxController {
     super.onInit();
   }
 
-  // set products(List<ProductModel> value) {
+  // void updateProduct(ProductModel product) {
   //
   // }
 
-  // void addProduct(ProductModel product) {
+  // ProductModel getProductBySKU(String sku) {
   //
   // }
 
-  void removeProduct(ProductModel product) {
-    _products.remove(product);
-  }
-
-  // void clearProducts() {
+  // void deleteProductByID() {
   //
+  // }
+
+  // void removeProduct(ProductModel product) {
+
   // }
 }
