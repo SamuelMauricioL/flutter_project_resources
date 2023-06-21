@@ -18,12 +18,15 @@ class SharedPreferences {
       _prefBox.write(SharedPreferencesKeys.inventoryId, inventoryId);
   Future<void> setEmployeeId(String employeeId) =>
       _prefBox.write(SharedPreferencesKeys.employeeId, employeeId);
+  Future<void> setAccessToken(String accessToken) =>
+      _prefBox.write('accessToken', accessToken);
 
   String get companyId => _prefBox.read(SharedPreferencesKeys.companyId) ?? '';
   String? get shopId => _prefBox.read(SharedPreferencesKeys.shopId);
   String? get terminalId => _prefBox.read(SharedPreferencesKeys.terminalId);
   String? get inventoryId => _prefBox.read(SharedPreferencesKeys.inventoryId);
   String? get employeeId => _prefBox.read(SharedPreferencesKeys.employeeId);
+  String? get accessToken => _prefBox.read('accessToken');
 
   void clearShopInfo() async {
     await _prefBox.remove(SharedPreferencesKeys.shopId);

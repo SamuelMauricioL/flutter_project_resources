@@ -36,6 +36,21 @@ class ProductModel extends ShopBase with EquatableMixin {
     this.sku,
   });
 
+  factory ProductModel.fromMap(Map<String, dynamic> map) {
+    return ProductModel(
+      id: map['id'] as String?,
+      name: map['name'] as String?,
+      description: map['description'] as String?,
+      image: map['image'] as String?,
+      price: double.parse(map['price']),
+      quantity: int.parse(map['quantity']),
+      sku: map['sku'] as String?,
+    );
+  }
+
+  static ProductModel fromJsonModel(Map<String, dynamic> json) =>
+      ProductModel.fromMap(json);
+
   @override
   List<Object?> get props =>
       [isarId, id, name, description, image, price, quantity, sku];

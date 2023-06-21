@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_resources/db/data_base.dart';
+import 'package:flutter_project_resources/di/dependency_injection.dart';
+import 'package:flutter_project_resources/environment_build/environment_build.dart';
 import 'package:flutter_project_resources/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 void main() async {
-  await DataBase.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  await EnvironmentConfig.init();
+  await DependencyInjection.init();
   runApp(const MyApp());
 }
 

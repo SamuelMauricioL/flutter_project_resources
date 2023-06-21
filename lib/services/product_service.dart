@@ -1,13 +1,13 @@
-import 'package:flutter_project_resources/api/product_api.dart';
+import 'package:flutter_project_resources/manager/product_manager.dart';
 import 'package:flutter_project_resources/models/product_model.dart';
 import 'package:flutter_project_resources/repositories/product_repository.dart';
 
 class ProductService {
-  final productApi = ProductApi();
+  final productManager = ProductManager();
   final productRepository = ProductRepository();
 
   Future<void> syncProducts() async {
-    final products = productApi.getProducts();
+    final products = await productManager.getProducts();
     await saveProducts(products);
   }
 
