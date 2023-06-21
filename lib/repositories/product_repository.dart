@@ -12,7 +12,26 @@ class ProductRepository extends ShopBaseRepository<ProductModel> {
     return productIds.isNotEmpty ? await findByIds(productIds) : [];
   }
 
-  Future<ProductModel?> findByProductSku(String sku) async {
-    return query().skuEqualTo(sku).findFirst();
+  Future<List<ProductModel>> findAvailableProducts() async {
+    return col.filter().deletedEqualTo(false).findAll();
+  }
+
+  Future<List<ProductModel>> findByProductSku(String sku) async {
+    return col.filter().skuEqualTo(sku).findAll();
+  }
+  
+  Future<void> updateProduct(ProductModel product) async {
+    await DataBase().isar.writeTxn((isar) => col.put(product));
+  }
+
+  Future<void> deleteProductBySku(String? sku) async {
+    var product = col.filter().skuEqualTo(sku).findFirstSync();
+    product!.deleted = true;
+    await DataBase().isar.writeTxn((isar) => col.put(product));
+  }
+
+  Future<void> deleteProduct(ProductModel product) async {
+    final id = product.isarId!;
+    await DataBase().isar.writeTxn((isar) => col.delete(id));
   }
 }

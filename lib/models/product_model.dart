@@ -22,7 +22,7 @@ class ProductModel extends ShopBase with EquatableMixin {
   ProductModel({
     super.created,
     super.modified,
-    super.deleted,
+    super.deleted = false,
     super.updated,
     super.companyId,
     super.shopId,
