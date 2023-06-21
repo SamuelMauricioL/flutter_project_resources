@@ -13,7 +13,7 @@ class ProductController extends GetxController {
   }
 
   void getProducts() async {
-    _products.value = await _productService.getProductsFromDb();
+    _products.value = await _productService.findAvailableProducts();
   }
 
   @override
@@ -22,19 +22,22 @@ class ProductController extends GetxController {
     super.onInit();
   }
 
-  // void updateProduct(ProductModel product) {
-  //
-  // }
+  void updateProduct(ProductModel product) async {
+    await _productService.updateProduct(product);
+    getProducts();
+  }
 
-  // ProductModel getProductBySKU(String sku) {
-  //
-  // }
+  void getProductBySku(String sku) async {
+    _products.value = await _productService.findByProductSku(sku);
+  }
 
-  // void deleteProductByID() {
-  //
-  // }
+  void deleteProductBySku(String? sku) async {
+    await _productService.deleteProductBySku(sku);
+    getProducts();
+  }
 
-  // void removeProduct(ProductModel product) {
-
-  // }
+  void deleteProduct(ProductModel product) async {
+    await _productService.deleteProduct(product);
+    getProducts();
+  }
 }
