@@ -6,9 +6,10 @@ class ProductService {
   final productManager = ProductManager();
   final productRepository = ProductRepository();
 
-  Future<void> syncProducts() async {
+  Future<List<ProductModel>> syncProducts() async {
     final products = await productManager.getProducts();
     await saveProducts(products);
+    return await findAvailableProducts();
   }
 
   Future<List<ProductModel>> getProductsFromDb() async {

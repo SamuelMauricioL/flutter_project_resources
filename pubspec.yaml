@@ -21,9 +21,11 @@ dependencies:
   isar_flutter_libs: ^2.5.0
   path_provider: ^2.0.10
   get_storage: ^2.0.3
-  dio: ^4.0.4
+  dio: ^4.0.6
   flutter_dotenv: ^5.0.2
   image_picker: ^0.8.5+3
+  optional: ^6.1.0+1
+  flutter_spinkit: ^5.1.0
 
 dev_dependencies:
   flutter_test:
