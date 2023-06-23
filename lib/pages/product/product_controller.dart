@@ -1,6 +1,8 @@
 import 'package:flutter_project_resources/models/product_model.dart';
 import 'package:flutter_project_resources/services/product_service.dart';
 import 'package:get/get.dart';
+import 'package:flutter_project_resources/core/extension/future_extension.dart';
+import 'package:optional/optional.dart';
 
 class ProductController extends GetxController {
   final _productService = ProductService();
@@ -9,22 +11,30 @@ class ProductController extends GetxController {
   List<ProductModel> get products => _products;
 
   Future<void> syncProducts() async {
-    await _productService.syncProducts();
+    await _productService
+        .syncProducts()
+        .showLoadingDialog()
+        .complete(getProducts)
+        .showErrorIfAny();
   }
 
-  void getProducts() async {
+  void getProducts(Optional<List<ProductModel>> products) async {
+    products.ifPresent((products) => _products.value = products);
+  }
+
+  void findAvailableProducts() async {
     _products.value = await _productService.findAvailableProducts();
   }
 
   @override
-  void onInit() {
-    syncProducts().then((_) => getProducts());
-    super.onInit();
+  void onReady() {
+    syncProducts();
+    super.onReady();
   }
 
   void updateProduct(ProductModel product) async {
     await _productService.updateProduct(product);
-    getProducts();
+    findAvailableProducts();
   }
 
   void getProductBySku(String sku) async {
@@ -33,11 +43,11 @@ class ProductController extends GetxController {
 
   void deleteProductBySku(String? sku) async {
     await _productService.deleteProductBySku(sku);
-    getProducts();
+    findAvailableProducts();
   }
 
   void deleteProduct(ProductModel product) async {
     await _productService.deleteProduct(product);
-    getProducts();
+    findAvailableProducts();
   }
 }
