@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () => Get.offNamed(Routes.product),
+              onPressed: () => Get.offNamed(Routes.options),
               child: const Text('Login'),
             ),
           ],
