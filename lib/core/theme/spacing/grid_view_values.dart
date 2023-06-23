@@ -1,0 +1,36 @@
+class GridViewValues {
+  static const maxCrossAxisExtentXs = 150.0;
+  static const maxCrossAxisExtentSm = 200.0;
+  static const maxCrossAxisExtentMd = 250.0;
+  static const maxCrossAxisExtentLg = 300.0;
+  static const maxCrossAxisExtentXl = 350.0;
+  static const maxCrossAxisExtent190 = 190.0;
+  static const maxCrossAxisExtent370 = 370.0;
+  static const maxCrossAxisExtentXxl = 400.0;
+  static const maxCrossAxisExtentXxxl = 430.0;
+  static const childAspectRatio1110 = 11 / 10;
+  static const childAspectRatio1210 = 12 / 10;
+  static const childAspectRatio1310 = 13 / 10;
+  static const childAspectRatio1410 = 14 / 10;
+  static const childAspectRatio1510 = 15 / 10;
+  static const childAspectRatio1610 = 16 / 10;
+  static const childAspectRatio1710 = 17 / 10;
+  static const childAspectRatio1810 = 18 / 10;
+  static const childAspectRatio1910 = 19 / 10;
+  static const childAspectRatio2110 = 21 / 10;
+  static const childAspectRatio2210 = 22 / 10;
+  static const childAspectRatio2310 = 23 / 10;
+  static const childAspectRatio2410 = 24 / 10;
+  static const childAspectRatio2510 = 25 / 10;
+  static const childAspectRatio2710 = 27 / 10;
+  static const childAspectRatio72 = 7 / 2;
+  static const childAspectRatio52 = 5 / 2;
+  static const childAspectRatio31 = 3 / 1;
+  static const childAspectRatio61 = 6 / 1;
+  static const childAspectRatio41 = 4 / 1;
+  static const childAspectRatio21 = 2 / 1;
+  static const crossAxisSpacingSm = 10.0;
+  static const crossAxisSpacingMd = 20.0;
+  static const mainAxisSpacingSm = 10.0;
+  static const mainAxisSpacingMd = 20.0;
+}
