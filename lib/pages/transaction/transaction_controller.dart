@@ -1,6 +1,8 @@
+import 'package:flutter_project_resources/core/extension/future_extension.dart';
 import 'package:flutter_project_resources/models/transaction_model.dart';
 import 'package:flutter_project_resources/services/transaction_service.dart';
 import 'package:get/get.dart';
+import 'package:optional/optional.dart';
 
 class TransactionController extends GetxController {
   final _transactionService = TransactionService();
@@ -9,16 +11,20 @@ class TransactionController extends GetxController {
   List<TransactionModel> get transactions => _transactions;
 
   Future<void> syncTransactions() async {
-    await _transactionService.syncTransactions();
+    await _transactionService
+    .syncTransactions()
+    .showLoadingDialog()
+    .complete(getTransactions)
+    .showErrorIfAny();
   }
 
-  void getTransactions() async {
-    _transactions.value = await _transactionService.findAvailableTransactions();
+  void getTransactions(Optional<List<TransactionModel>> transactions) async {
+    transactions.ifPresent((transactions) => _transactions.value = transactions);
   }
 
   @override
-  void onInit() {
-    syncTransactions().then((_) => getTransactions());
-    super.onInit();
+  void onReady() {
+    syncTransactions();
+    super.onReady();
   }
 }

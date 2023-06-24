@@ -6,9 +6,10 @@ class TransactionService {
   final transactionManager = TransactionManager();
   final transactionRepository = TransactionRepository();
 
-  Future<void> syncTransactions() async {
+  Future<List<TransactionModel>> syncTransactions() async {
     final transactions = await transactionManager.getTransactions();
     await saveTransactions(transactions);
+    return await findAvailableTransactions();
   }
 
   Future<List<TransactionModel>> getTransactionsFromDb() async {
