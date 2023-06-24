@@ -13,10 +13,10 @@ class ListViewProducts extends GetView<ProductController> {
           Padding(
             padding: const EdgeInsets.all(10),
             child: TextField(
-              decoration: const InputDecoration(
-                suffixIcon: Icon(Icons.search),
-                labelText: "Search",
-                hintText: "Enter Sku here"
+              decoration: InputDecoration(
+                suffixIcon: const Icon(Icons.search),
+                labelText: 'search'.tr,
+                hintText: 'enter_sku_here'.tr,
                 ),
               onSubmitted: (value) => controller.getProductBySku(value),
             ),

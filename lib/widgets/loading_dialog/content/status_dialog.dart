@@ -9,17 +9,17 @@ class StatusDialog extends StatelessWidget {
     return Container(
         width: 80,
         height: 80,
-        child: Icon(
-          success ? Icons.check : Icons.clear,
-          color: Colors.grey.shade500,
-          size: 50,
-        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40.0),
           border: Border.all(
             width: 4.0,
             color: Colors.grey.shade500,
           ),
+        ),
+        child: Icon(
+          success ? Icons.check : Icons.clear,
+          color: Colors.grey.shade500,
+          size: 50,
         ));
   }
 }

@@ -8,14 +8,14 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login Page')),
+      appBar: AppBar(title: Text('login_page'.tr)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () => Get.offNamed(Routes.product),
-              child: const Text('Login'),
+              child: Text('login'.tr),
             ),
           ],
         ),
