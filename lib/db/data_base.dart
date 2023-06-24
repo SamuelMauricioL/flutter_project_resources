@@ -1,4 +1,5 @@
 import 'package:flutter_project_resources/models/product_model.dart';
+import 'package:flutter_project_resources/models/transaction_model.dart';
 import 'package:isar/isar.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:path_provider/path_provider.dart';
@@ -39,6 +40,7 @@ class DataBase {
   static List<CollectionSchema> getCollectionSchema() {
     List<CollectionSchema> collections = [
       ProductModelSchema,
+      TransactionModelSchema,
     ];
     return collections;
   }

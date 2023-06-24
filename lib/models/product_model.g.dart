@@ -82,87 +82,87 @@ void _productModelSerializeNative(
     AdapterAlloc alloc) {
   var dynamicSize = 0;
   final value0 = object.companyId;
-  IsarUint8List? companyId;
+  IsarUint8List? _companyId;
   if (value0 != null) {
-    companyId = IsarBinaryWriter.utf8Encoder.convert(value0);
+    _companyId = IsarBinaryWriter.utf8Encoder.convert(value0);
   }
-  dynamicSize += (companyId?.length ?? 0) as int;
+  dynamicSize += (_companyId?.length ?? 0) as int;
   final value1 = object.created;
-  final created = value1;
+  final _created = value1;
   final value2 = object.deleted;
-  final deleted = value2;
+  final _deleted = value2;
   final value3 = object.description;
-  IsarUint8List? description;
+  IsarUint8List? _description;
   if (value3 != null) {
-    description = IsarBinaryWriter.utf8Encoder.convert(value3);
+    _description = IsarBinaryWriter.utf8Encoder.convert(value3);
   }
-  dynamicSize += (description?.length ?? 0) as int;
+  dynamicSize += (_description?.length ?? 0) as int;
   final value4 = object.dirty;
-  final dirty = value4;
+  final _dirty = value4;
   final value5 = object.hashCode;
-  final hashCode = value5;
+  final _hashCode = value5;
   final value6 = object.id;
-  IsarUint8List? id;
+  IsarUint8List? _id;
   if (value6 != null) {
-    id = IsarBinaryWriter.utf8Encoder.convert(value6);
+    _id = IsarBinaryWriter.utf8Encoder.convert(value6);
   }
-  dynamicSize += (id?.length ?? 0) as int;
+  dynamicSize += (_id?.length ?? 0) as int;
   final value7 = object.image;
-  IsarUint8List? image;
+  IsarUint8List? _image;
   if (value7 != null) {
-    image = IsarBinaryWriter.utf8Encoder.convert(value7);
+    _image = IsarBinaryWriter.utf8Encoder.convert(value7);
   }
-  dynamicSize += (image?.length ?? 0) as int;
+  dynamicSize += (_image?.length ?? 0) as int;
   final value8 = object.modified;
-  final modified = value8;
+  final _modified = value8;
   final value9 = object.name;
-  IsarUint8List? name;
+  IsarUint8List? _name;
   if (value9 != null) {
-    name = IsarBinaryWriter.utf8Encoder.convert(value9);
+    _name = IsarBinaryWriter.utf8Encoder.convert(value9);
   }
-  dynamicSize += (name?.length ?? 0) as int;
+  dynamicSize += (_name?.length ?? 0) as int;
   final value10 = object.price;
-  final price = value10;
+  final _price = value10;
   final value11 = object.quantity;
-  final quantity = value11;
+  final _quantity = value11;
   final value12 = object.shopId;
-  IsarUint8List? shopId;
+  IsarUint8List? _shopId;
   if (value12 != null) {
-    shopId = IsarBinaryWriter.utf8Encoder.convert(value12);
+    _shopId = IsarBinaryWriter.utf8Encoder.convert(value12);
   }
-  dynamicSize += (shopId?.length ?? 0) as int;
+  dynamicSize += (_shopId?.length ?? 0) as int;
   final value13 = object.sku;
-  IsarUint8List? sku;
+  IsarUint8List? _sku;
   if (value13 != null) {
-    sku = IsarBinaryWriter.utf8Encoder.convert(value13);
+    _sku = IsarBinaryWriter.utf8Encoder.convert(value13);
   }
-  dynamicSize += (sku?.length ?? 0) as int;
+  dynamicSize += (_sku?.length ?? 0) as int;
   final value14 = object.stringify;
-  final stringify = value14;
+  final _stringify = value14;
   final value15 = object.updated;
-  final updated = value15;
+  final _updated = value15;
   final size = staticSize + dynamicSize;
 
   rawObj.buffer = alloc(size);
   rawObj.buffer_length = size;
   final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
   final writer = IsarBinaryWriter(buffer, staticSize);
-  writer.writeBytes(offsets[0], companyId);
-  writer.writeLong(offsets[1], created);
-  writer.writeBool(offsets[2], deleted);
-  writer.writeBytes(offsets[3], description);
-  writer.writeBool(offsets[4], dirty);
-  writer.writeLong(offsets[5], hashCode);
-  writer.writeBytes(offsets[6], id);
-  writer.writeBytes(offsets[7], image);
-  writer.writeLong(offsets[8], modified);
-  writer.writeBytes(offsets[9], name);
-  writer.writeDouble(offsets[10], price);
-  writer.writeLong(offsets[11], quantity);
-  writer.writeBytes(offsets[12], shopId);
-  writer.writeBytes(offsets[13], sku);
-  writer.writeBool(offsets[14], stringify);
-  writer.writeBool(offsets[15], updated);
+  writer.writeBytes(offsets[0], _companyId);
+  writer.writeLong(offsets[1], _created);
+  writer.writeBool(offsets[2], _deleted);
+  writer.writeBytes(offsets[3], _description);
+  writer.writeBool(offsets[4], _dirty);
+  writer.writeLong(offsets[5], _hashCode);
+  writer.writeBytes(offsets[6], _id);
+  writer.writeBytes(offsets[7], _image);
+  writer.writeLong(offsets[8], _modified);
+  writer.writeBytes(offsets[9], _name);
+  writer.writeDouble(offsets[10], _price);
+  writer.writeLong(offsets[11], _quantity);
+  writer.writeBytes(offsets[12], _shopId);
+  writer.writeBytes(offsets[13], _sku);
+  writer.writeBool(offsets[14], _stringify);
+  writer.writeBool(offsets[15], _updated);
 }
 
 ProductModel _productModelDeserializeNative(
