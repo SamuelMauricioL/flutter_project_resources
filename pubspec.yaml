@@ -40,3 +40,4 @@ flutter:
     - .env.dev
     - .env.prod
     - .env.staging
+    - assets/languages/
