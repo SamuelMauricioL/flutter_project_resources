@@ -1,7 +1,17 @@
 {
-    "login_page": "Página de Login",
-    "login": "Login",
-    "product_page" : "Página de Produtos",
+    "login_page": "Página de inicio de sesión",
+    "login": "Iniciar sesión",
+    "options_page" : "Página de opciones",
+    "products" : "Productos",
+    "transactions" : "Transacciones",
+    "products_page" : "Página de productos",
     "search": "Buscar",
-    "enter_sku_here": "Ingresar SKU aquí"
+    "enter_sku_here": "Ingresar SKU aquí",
+    "transactions_page" : "Página de transacciones",
+    "transaction" : "Transacción",
+    "product_id" : "Identificador del producto",
+    "quantity" : "Cantidad",
+    "amount" : "Importe",
+    "fee" : "Tasa",
+    "comment" : "Comentario"
 }

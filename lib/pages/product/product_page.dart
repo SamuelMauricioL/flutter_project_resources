@@ -8,7 +8,7 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('product_page'.tr)),
+      appBar: AppBar(title: Text('products_page'.tr)),
       body: const ListViewProducts(),
     );
   }

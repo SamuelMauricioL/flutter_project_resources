@@ -8,19 +8,19 @@ class OptionsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Options Page')),
+      appBar: AppBar(title: Text('options_page'.tr)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () => Get.offNamed(Routes.product),
-              child: const Text('Products'),
+              child: Text('products'.tr),
             ),
             const SizedBox(height: 10,),
             ElevatedButton(
               onPressed: () => Get.offNamed(Routes.transaction),
-              child: const Text('Transactions'),
+              child: Text('transactions'.tr),
             ),
           ],
         ),

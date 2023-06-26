@@ -1,7 +1,17 @@
 {
     "login_page": "Login Page",
     "login": "Login",
-    "product_page" : "Product Page",
+    "options_page" : "Options Page",
+    "products" : "Products",
+    "transactions" : "Transactions",
+    "products_page" : "Products Page",
     "search": "Search",
-    "enter_sku_here": "Enter SKU here"
+    "enter_sku_here": "Enter SKU here",
+    "transactions_page" : "Transactions Page",
+    "transaction" : "Transaction",
+    "product_id" : "Prodcut Id",
+    "quantity" : "Quantity",
+    "amount" : "Amount",
+    "fee" : "Fee",
+    "comment" : "Comment"
 }
