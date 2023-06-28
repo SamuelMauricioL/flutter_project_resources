@@ -17,7 +17,7 @@ class ListViewProducts extends GetView<ProductController> {
                 suffixIcon: const Icon(Icons.search),
                 labelText: 'search'.tr,
                 hintText: 'enter_sku_here'.tr,
-                ),
+              ),
               onSubmitted: (value) => controller.getProductBySku(value),
             ),
           ),
@@ -48,7 +48,8 @@ class ListViewProducts extends GetView<ProductController> {
                       IconButton(
                         icon: const Icon(Icons.delete),
                         onPressed: () {
-                          controller.deleteProductBySku(controller.products[index].sku);
+                          controller.deleteProductBySku(
+                              controller.products[index].sku);
                         },
                       ),
                     ],
