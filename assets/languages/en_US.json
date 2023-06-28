@@ -1,7 +1,10 @@
 {
     "login_page": "Login Page",
     "login": "Login",
-    "product_page" : "Product Page",
+    "options_page" : "Options Page",
+    "products" : "Products",
+    "transactions" : "Transactions",
+    "products_page" : "Products Page",
     "search": "Search",
     "enter_sku_here": "Enter SKU here",
     "transaction_page": "Transaction Page",

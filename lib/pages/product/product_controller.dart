@@ -5,7 +5,7 @@ import 'package:flutter_project_resources/core/extension/future_extension.dart';
 import 'package:optional/optional.dart';
 
 class ProductController extends GetxController {
-  final _productService = ProductService();
+  final _productService = Get.find<ProductService>();
 
   final RxList<ProductModel> _products = <ProductModel>[].obs;
   List<ProductModel> get products => _products;
@@ -22,7 +22,7 @@ class ProductController extends GetxController {
     products.ifPresent((products) => _products.value = products);
   }
 
-  void findAvailableProducts() async {
+  Future<void> findAvailableProducts() async {
     _products.value = await _productService.findAvailableProducts();
   }
 
@@ -32,21 +32,21 @@ class ProductController extends GetxController {
     super.onReady();
   }
 
-  void updateProduct(ProductModel product) async {
+  Future<void> updateProduct(ProductModel product) async {
     await _productService.updateProduct(product);
     findAvailableProducts();
   }
 
-  void getProductBySku(String sku) async {
+  Future<void> getProductBySku(String sku) async {
     _products.value = await _productService.findByProductSku(sku);
   }
 
-  void deleteProductBySku(String? sku) async {
+  Future<void> deleteProductBySku(String? sku) async {
     await _productService.deleteProductBySku(sku);
     findAvailableProducts();
   }
 
-  void deleteProduct(ProductModel product) async {
+  Future<void> deleteProduct(ProductModel product) async {
     await _productService.deleteProduct(product);
     findAvailableProducts();
   }

@@ -22,7 +22,7 @@ class ListViewTransactions extends GetView<TransactionController> {
                       Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          "${"transaction".tr} #${controller.transactions[index].id}",
+                          "${'transaction'.tr} #${controller.transactions[index].id}",
                           style: const TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
