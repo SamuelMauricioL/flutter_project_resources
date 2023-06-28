@@ -1,9 +1,9 @@
 import 'package:flutter_project_resources/http/exceptions/app_exception.dart';
 import 'package:flutter_project_resources/manager/product_manager.dart';
-import 'package:flutter_project_resources/models/product_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import '../../utils/fake_http_result.dart';
+import '../../utils/mocked_product.dart';
 import 'product.mocks.dart';
 
 Future<void> main() async {
@@ -15,19 +15,11 @@ Future<void> main() async {
   });
 
   group('getProducts', () {
-    final mockedProduct = ProductModel(
-      id: '1',
-      name: 'Product 1',
-      sku: '1',
-      price: 1.0,
-      description: 'Product 1 description',
-      image: 'product_1.png',
-      quantity: 1,
-    );
+    final mockedProducts = getMockedProducts();
 
     void setUpMockSuccess200() {
       when(productApi.getProducts()).thenAnswer(
-          (_) async => httpResult200(data: [mockedProduct.toMap()]));
+          (_) async => httpResult200(data: [mockedProducts.first.toMap()]));
     }
 
     void setUpMockFailure400() {
@@ -43,7 +35,7 @@ Future<void> main() async {
         // act
         final result = await manager.getProducts();
         // assert
-        expect(result, equals([mockedProduct]));
+        expect(result, equals([mockedProducts.first]));
       },
     );
 

@@ -3,12 +3,15 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i6;
 
 import 'package:flutter_project_resources/api/product_api.dart' as _i3;
 import 'package:flutter_project_resources/http/http_result.dart' as _i2;
-import 'package:flutter_project_resources/manager/product_manager.dart' as _i5;
-import 'package:flutter_project_resources/models/product_model.dart' as _i6;
+import 'package:flutter_project_resources/manager/product_manager.dart' as _i4;
+import 'package:flutter_project_resources/models/product_model.dart' as _i7;
+import 'package:flutter_project_resources/repositories/product_repository.dart'
+    as _i5;
+import 'package:flutter_project_resources/services/product_service.dart' as _i8;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -25,6 +28,11 @@ class _FakeHttpResult_0<T> extends _i1.Fake implements _i2.HttpResult<T> {}
 
 class _FakeProductApi_1 extends _i1.Fake implements _i3.ProductApi {}
 
+class _FakeProductManager_2 extends _i1.Fake implements _i4.ProductManager {}
+
+class _FakeProductRepository_3 extends _i1.Fake
+    implements _i5.ProductRepository {}
+
 /// A class which mocks [ProductApi].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -34,20 +42,20 @@ class MockProductApi extends _i1.Mock implements _i3.ProductApi {
   }
 
   @override
-  _i4.Future<_i2.HttpResult<dynamic>> getProducts() => (super.noSuchMethod(
+  _i6.Future<_i2.HttpResult<dynamic>> getProducts() => (super.noSuchMethod(
         Invocation.method(
           #getProducts,
           [],
         ),
         returnValue:
             Future<_i2.HttpResult<dynamic>>.value(_FakeHttpResult_0<dynamic>()),
-      ) as _i4.Future<_i2.HttpResult<dynamic>>);
+      ) as _i6.Future<_i2.HttpResult<dynamic>>);
 }
 
 /// A class which mocks [ProductManager].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockProductManager extends _i1.Mock implements _i5.ProductManager {
+class MockProductManager extends _i1.Mock implements _i4.ProductManager {
   MockProductManager() {
     _i1.throwOnMissingStub(this);
   }
@@ -66,13 +74,106 @@ class MockProductManager extends _i1.Mock implements _i5.ProductManager {
         returnValueForMissingStub: null,
       );
   @override
-  _i4.Future<List<_i6.ProductModel>> getProducts() => (super.noSuchMethod(
+  _i6.Future<List<_i7.ProductModel>> getProducts() => (super.noSuchMethod(
         Invocation.method(
           #getProducts,
           [],
         ),
-        returnValue: Future<List<_i6.ProductModel>>.value(<_i6.ProductModel>[]),
-      ) as _i4.Future<List<_i6.ProductModel>>);
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+}
+
+/// A class which mocks [ProductService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockProductService extends _i1.Mock implements _i8.ProductService {
+  MockProductService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.ProductManager get productManager => (super.noSuchMethod(
+        Invocation.getter(#productManager),
+        returnValue: _FakeProductManager_2(),
+      ) as _i4.ProductManager);
+  @override
+  _i5.ProductRepository get productRepository => (super.noSuchMethod(
+        Invocation.getter(#productRepository),
+        returnValue: _FakeProductRepository_3(),
+      ) as _i5.ProductRepository);
+  @override
+  _i6.Future<List<_i7.ProductModel>> syncProducts() => (super.noSuchMethod(
+        Invocation.method(
+          #syncProducts,
+          [],
+        ),
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+  @override
+  _i6.Future<List<_i7.ProductModel>> getProductsFromDb() => (super.noSuchMethod(
+        Invocation.method(
+          #getProductsFromDb,
+          [],
+        ),
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+  @override
+  _i6.Future<void> saveProducts(List<_i7.ProductModel>? products) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #saveProducts,
+          [products],
+        ),
+        returnValue: Future<void>.value(),
+        returnValueForMissingStub: Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<List<_i7.ProductModel>> findAvailableProducts() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #findAvailableProducts,
+          [],
+        ),
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+  @override
+  _i6.Future<void> updateProduct(_i7.ProductModel? product) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateProduct,
+          [product],
+        ),
+        returnValue: Future<void>.value(),
+        returnValueForMissingStub: Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<List<_i7.ProductModel>> findByProductSku(String? sku) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #findByProductSku,
+          [sku],
+        ),
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+  @override
+  _i6.Future<void> deleteProductBySku(String? sku) => (super.noSuchMethod(
+        Invocation.method(
+          #deleteProductBySku,
+          [sku],
+        ),
+        returnValue: Future<void>.value(),
+        returnValueForMissingStub: Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<void> deleteProduct(_i7.ProductModel? product) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteProduct,
+          [product],
+        ),
+        returnValue: Future<void>.value(),
+        returnValueForMissingStub: Future<void>.value(),
+      ) as _i6.Future<void>);
 }
 
 /// A class which mocks [ProductApi].
@@ -84,20 +185,20 @@ class MockAssetRemoteDatasource extends _i1.Mock implements _i3.ProductApi {
   }
 
   @override
-  _i4.Future<_i2.HttpResult<dynamic>> getProducts() => (super.noSuchMethod(
+  _i6.Future<_i2.HttpResult<dynamic>> getProducts() => (super.noSuchMethod(
         Invocation.method(
           #getProducts,
           [],
         ),
         returnValue:
             Future<_i2.HttpResult<dynamic>>.value(_FakeHttpResult_0<dynamic>()),
-      ) as _i4.Future<_i2.HttpResult<dynamic>>);
+      ) as _i6.Future<_i2.HttpResult<dynamic>>);
 }
 
 /// A class which mocks [ProductManager].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAssetApiHandler extends _i1.Mock implements _i5.ProductManager {
+class MockAssetApiHandler extends _i1.Mock implements _i4.ProductManager {
   MockAssetApiHandler() {
     _i1.throwOnMissingStub(this);
   }
@@ -116,11 +217,104 @@ class MockAssetApiHandler extends _i1.Mock implements _i5.ProductManager {
         returnValueForMissingStub: null,
       );
   @override
-  _i4.Future<List<_i6.ProductModel>> getProducts() => (super.noSuchMethod(
+  _i6.Future<List<_i7.ProductModel>> getProducts() => (super.noSuchMethod(
         Invocation.method(
           #getProducts,
           [],
         ),
-        returnValue: Future<List<_i6.ProductModel>>.value(<_i6.ProductModel>[]),
-      ) as _i4.Future<List<_i6.ProductModel>>);
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+}
+
+/// A class which mocks [ProductService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockProductServiceStorage extends _i1.Mock implements _i8.ProductService {
+  MockProductServiceStorage() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.ProductManager get productManager => (super.noSuchMethod(
+        Invocation.getter(#productManager),
+        returnValue: _FakeProductManager_2(),
+      ) as _i4.ProductManager);
+  @override
+  _i5.ProductRepository get productRepository => (super.noSuchMethod(
+        Invocation.getter(#productRepository),
+        returnValue: _FakeProductRepository_3(),
+      ) as _i5.ProductRepository);
+  @override
+  _i6.Future<List<_i7.ProductModel>> syncProducts() => (super.noSuchMethod(
+        Invocation.method(
+          #syncProducts,
+          [],
+        ),
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+  @override
+  _i6.Future<List<_i7.ProductModel>> getProductsFromDb() => (super.noSuchMethod(
+        Invocation.method(
+          #getProductsFromDb,
+          [],
+        ),
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+  @override
+  _i6.Future<void> saveProducts(List<_i7.ProductModel>? products) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #saveProducts,
+          [products],
+        ),
+        returnValue: Future<void>.value(),
+        returnValueForMissingStub: Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<List<_i7.ProductModel>> findAvailableProducts() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #findAvailableProducts,
+          [],
+        ),
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+  @override
+  _i6.Future<void> updateProduct(_i7.ProductModel? product) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateProduct,
+          [product],
+        ),
+        returnValue: Future<void>.value(),
+        returnValueForMissingStub: Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<List<_i7.ProductModel>> findByProductSku(String? sku) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #findByProductSku,
+          [sku],
+        ),
+        returnValue: Future<List<_i7.ProductModel>>.value(<_i7.ProductModel>[]),
+      ) as _i6.Future<List<_i7.ProductModel>>);
+  @override
+  _i6.Future<void> deleteProductBySku(String? sku) => (super.noSuchMethod(
+        Invocation.method(
+          #deleteProductBySku,
+          [sku],
+        ),
+        returnValue: Future<void>.value(),
+        returnValueForMissingStub: Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<void> deleteProduct(_i7.ProductModel? product) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteProduct,
+          [product],
+        ),
+        returnValue: Future<void>.value(),
+        returnValueForMissingStub: Future<void>.value(),
+      ) as _i6.Future<void>);
 }
