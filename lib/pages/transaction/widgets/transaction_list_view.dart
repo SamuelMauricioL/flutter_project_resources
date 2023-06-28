@@ -22,7 +22,7 @@ class ListViewTransactions extends GetView<TransactionController> {
                       Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          "Transaction #${controller.transactions[index].id}",
+                          "${"transaction".tr} #${controller.transactions[index].id}",
                           style: const TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
@@ -31,23 +31,23 @@ class ListViewTransactions extends GetView<TransactionController> {
                         ),
                       ),
                       ProductDetail(
-                        name: "Product Id",
+                        name: "product_id".tr,
                         value: controller.transactions[index].productId,
                       ),
                       ProductDetail(
-                        name: "Quantity", 
+                        name: "quantity".tr, 
                         value: controller.transactions[index].quantity.toString()
                       ),
                       ProductDetail(
-                        name: "Ammout", 
+                        name: "amount".tr, 
                         value: controller.transactions[index].amount.toString()
                       ),
                       ProductDetail(
-                        name: "Fee", 
+                        name: "fee".tr, 
                         value: controller.transactions[index].fee.toString()
                       ),
                       ProductDetail(
-                        name: "Comment", 
+                        name: "comment".tr, 
                         value: controller.transactions[index].comment ?? ''
                       ),
                     ],

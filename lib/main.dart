@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       enableLog: true,
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
-      locale: Get.deviceLocale,
+      locale: const Locale('es', 'ES'),
       fallbackLocale: const Locale('es', 'ES'),
       translations: Languages(),
     );

@@ -3,5 +3,12 @@
     "login": "Login",
     "product_page" : "Product Page",
     "search": "Search",
-    "enter_sku_here": "Enter SKU here"
+    "enter_sku_here": "Enter SKU here",
+    "transaction_page": "Transaction Page",
+    "transaction": "Transaction",
+    "product_id": "Product Id",
+    "quantity": "Quantity",
+    "amount": "Amount",
+    "fee": "Fee",
+    "comment": "Comment"
 }

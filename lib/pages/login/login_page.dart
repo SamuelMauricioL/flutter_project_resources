@@ -17,6 +17,10 @@ class LoginPage extends StatelessWidget {
               onPressed: () => Get.offNamed(Routes.product),
               child: Text('login'.tr),
             ),
+            ElevatedButton(
+              onPressed: () => Get.offNamed(Routes.transaction),
+              child: Text('login'.tr),
+            ),
           ],
         ),
       ),
