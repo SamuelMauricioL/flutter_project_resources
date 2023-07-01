@@ -56,7 +56,7 @@ Future<void> main() async {
       expect(products, equals(mockedProducts));
     });
 
-    test('should update a Products', () async {
+    test('should update a Product', () async {
       setUpMockFindAvailableProducts();
       await controller.findAvailableProducts();
 
