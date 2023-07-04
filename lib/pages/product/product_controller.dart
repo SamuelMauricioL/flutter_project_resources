@@ -34,7 +34,7 @@ class ProductController extends GetxController {
 
   Future<void> updateProduct(ProductModel product) async {
     await _productService.updateProduct(product);
-    findAvailableProducts();
+    await findAvailableProducts();
   }
 
   Future<void> getProductBySku(String sku) async {
@@ -43,11 +43,11 @@ class ProductController extends GetxController {
 
   Future<void> deleteProductBySku(String? sku) async {
     await _productService.deleteProductBySku(sku);
-    findAvailableProducts();
+    await findAvailableProducts();
   }
 
   Future<void> deleteProduct(ProductModel product) async {
     await _productService.deleteProduct(product);
-    findAvailableProducts();
+    await findAvailableProducts();
   }
 }
