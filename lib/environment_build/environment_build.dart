@@ -8,6 +8,10 @@ class EnvironmentConfig {
     await dotenv.load(fileName: getVarsEnvironment(envParam).fileName);
   }
 
+  static Future<void> inite2e() async {
+    await dotenv.load(fileName: Env.local.fileName);
+  }
+
   static Env getVarsEnvironment(String env) {
     return Env.values
         .firstWhere((element) => element.name == env, orElse: () => Env.dev);

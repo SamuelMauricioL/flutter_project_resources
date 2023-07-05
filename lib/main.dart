@@ -5,7 +5,7 @@ import 'package:flutter_project_resources/i18n/languages.dart';
 import 'package:flutter_project_resources/routes/app_pages.dart';
 import 'package:get/get.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Languages.init();
   await EnvironmentConfig.init();

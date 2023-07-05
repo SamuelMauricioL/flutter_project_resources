@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/v1/products/products"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "values": [
+        {
+          "name": "Fish",
+          "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+          "image": "https://loremflickr.com/640/480/city",
+          "price": "491.00",
+          "quantity": "6",
+          "sku": "p",
+          "category": "category 1",
+          "id": "1"
+        },
+        {
+          "name": "Table",
+          "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+          "image": "https://loremflickr.com/640/480/city",
+          "price": "779.00",
+          "quantity": "8",
+          "sku": "r",
+          "category": "category 2",
+          "id": "2"
+        }
+      ]
+    }
+  }
+}

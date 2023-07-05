@@ -1,0 +1,9 @@
+version: "3"
+services:
+  wiremock:
+    container_name: platform-mock-server
+    image: rodolpheche/wiremock:2.25.1
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/home/wiremock
