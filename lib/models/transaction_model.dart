@@ -48,6 +48,17 @@ class TransactionModel extends ShopBase with EquatableMixin {
   static TransactionModel fromJsonModel(Map<String, dynamic> json) => 
       TransactionModel.fromMap(json);
 
+    Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'amount': amount.toString(),
+      'fee': fee.toString(),
+      'comment': comment,
+      'product_id': productId,
+      'quantity': quantity.toString(),
+    };
+  }
+
   @override
   List<Object?> get props => 
       [isarId, id, amount, fee, comment, productId, quantity];

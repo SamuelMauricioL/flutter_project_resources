@@ -23,4 +23,24 @@ class TransactionService {
   Future<List<TransactionModel>> findAvailableTransactions() async {
     return await transactionRepository.findAvailableTransactions();
   }
+
+  Future<void> updateTransaction(TransactionModel transaction) async {
+    await transactionRepository.updateTransaction(transaction);
+  }
+
+  Future<List<TransactionModel>> findByTransactionId(String id) async {
+    if (id == "") {
+      return await transactionRepository.findAll();
+    } else {
+      return await transactionRepository.findByTransactionId(id);
+    }
+  }
+
+  Future<void> deleteTransactionById(String? id) async {
+    await transactionRepository.deleteTransactionById(id);
+  }
+
+  Future<void> deleteTransaction(TransactionModel transaction) async {
+    await transactionRepository.deleteTransaction(transaction);
+  }
 }

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:optional/optional.dart';
 
 class TransactionController extends GetxController {
-  final _transactionService = TransactionService();
+  final _transactionService = Get.find<TransactionService>();
 
   final RxList<TransactionModel> _transactions = <TransactionModel>[].obs;
   List<TransactionModel> get transactions => _transactions;
@@ -22,9 +22,32 @@ class TransactionController extends GetxController {
     transactions.ifPresent((transactions) => _transactions.value = transactions);
   }
 
+  Future<void> findAvailableTransactions() async {
+    _transactions.value = await _transactionService.findAvailableTransactions();
+  }
+
   @override
   void onReady() {
     syncTransactions();
     super.onReady();
+  }
+
+  Future<void> updateTransaction(TransactionModel transaction) async {
+    await _transactionService.updateTransaction(transaction);
+    findAvailableTransactions();
+  }
+
+  Future<void> getTransationById(String id) async {
+    _transactions.value = await _transactionService.findByTransactionId(id);
+  }
+
+  Future<void> deleteTransactionById(String? id) async {
+    await _transactionService.deleteTransactionById(id);
+    findAvailableTransactions();
+  }
+
+  Future<void> deleteTransaction(TransactionModel transaction) async {
+    await _transactionService.deleteTransaction(transaction);
+    findAvailableTransactions();
   }
 }
