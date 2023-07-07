@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_resources/core/testing/values/key_widgets.dart';
 import 'package:flutter_project_resources/routes/app_pages.dart';
 import 'package:get/get.dart';
 
@@ -14,11 +15,13 @@ class OptionsPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
+              key: const Key(KeyWidgets.productButtonKey),
               onPressed: () => Get.offNamed(Routes.product),
               child: Text('products'.tr),
             ),
             const SizedBox(height: 10,),
             ElevatedButton(
+              key: const Key(KeyWidgets.transactionButtonKey),
               onPressed: () => Get.offNamed(Routes.transaction),
               child: Text('transactions'.tr),
             ),
