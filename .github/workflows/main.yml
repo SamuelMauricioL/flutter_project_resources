@@ -1,0 +1,49 @@
+name: Flutter CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build_android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: "12.x"
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v1.8.0
+        with:
+          flutter-version: "2.2.3"
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Build APK
+        run: flutter build apk
+
+  build_ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v1.8.0
+        with:
+          flutter-version: "2.2.3"
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Build iOS
+        run: flutter build ios --no-codesign
+
+  build_web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v1.8.0
+        with:
+          flutter-version: "2.2.3"
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Build Web
+        run: flutter build web
