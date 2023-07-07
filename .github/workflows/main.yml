@@ -13,45 +13,17 @@ jobs:
         with:
           dart-version: "2.19.2"
 
-jobs:
-  setup_flutter:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.7.5"
 
-jobs:
-  build_android:
-    needs: [setup, setup_flutter]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install dependencies
-        run: flutter pub get
-        
-      - name: Get database schemas
-        run: flutter pub run build_runner build
-        
-      - name: Analyze code
-        run: flutter analyze
-
-      - name: Run unit tests
-        run: flutter test
-      
-
-jobs:
-  build_web:
-    needs: [setup, setup_flutter]
-    runs-on: ubuntu-latest
-    steps:
       - name: Install dependencies
         run: flutter pub get
 
       - name: Get database schemas
         run: flutter pub run build_runner build
-        
+
       - name: Analyze code
         run: flutter analyze
 
