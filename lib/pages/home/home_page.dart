@@ -8,7 +8,7 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Page')),
+      appBar: AppBar(title: Text('home_page'.tr)),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -21,12 +21,12 @@ class HomePage extends GetView<HomeController> {
             children: [
               ElevatedButton(
                 onPressed: () => controller.dismis(),
-                child: const Text('Dismiss'),
+                child: Text('dismiss'.tr),
               ),
               const SizedBox(width: 10),
               ElevatedButton(
                 onPressed: () => controller.add(),
-                child: const Text('Add'),
+                child: Text('add'.tr),
               ),
             ],
           ),
@@ -37,7 +37,7 @@ class HomePage extends GetView<HomeController> {
               // Get.toNamed(Routes.product);
               controller.goToProduct();
             },
-            child: const Text('Go to Product Page'),
+            child: Text('go_to_product_page'.tr),
           ),
         ],
       ),
