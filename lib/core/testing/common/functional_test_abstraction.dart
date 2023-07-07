@@ -20,7 +20,7 @@ class FunctionalTestAbstraction {
       Get.testMode = true;
       await DependencyInjection.init();
       await ControllerInjection.init();
-      await EnvironmentConfig.init();
+      await EnvironmentConfig.inite2e();
       if (beforeAll != null) {
         await beforeAll();
       }

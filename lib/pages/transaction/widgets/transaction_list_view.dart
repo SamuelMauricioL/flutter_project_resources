@@ -24,9 +24,9 @@ class ListViewTransactions extends GetView<TransactionController> {
                         child: Text(
                           "${'transaction'.tr} #${controller.transactions[index].id}",
                           style: const TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20,
                           ),
                         ),
                       ),

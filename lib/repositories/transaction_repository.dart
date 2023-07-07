@@ -31,7 +31,7 @@ class TransactionRepository extends ShopBaseRepository<TransactionModel> {
   }
 
   Future<void> deleteTransaction(TransactionModel transaction) async {
-    final isarId = transaction.isarId!;
-    await DataBase().isar.writeTxn((isar) => col.delete(isarId));
+    final id = transaction.isarId!;
+    await DataBase().isar.writeTxn((isar) => col.delete(id));
   }
 }
