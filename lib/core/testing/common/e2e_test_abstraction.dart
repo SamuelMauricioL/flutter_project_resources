@@ -1,6 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages
 
-import 'package:flutter_project_resources/environment_build/environment_build.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:meta/meta.dart';
@@ -11,7 +10,6 @@ class E2ETestAbstraction {
     IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
     setUpAll(() async {
-      await EnvironmentConfig.inite2e();
       if (beforeAll != null) {
         await beforeAll();
       }
