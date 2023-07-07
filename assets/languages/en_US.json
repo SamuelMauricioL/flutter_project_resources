@@ -13,5 +13,9 @@
     "quantity": "Quantity",
     "amount": "Amount",
     "fee": "Fee",
-    "comment": "Comment"
+    "comment": "Comment",
+    "home_page": "Home Page",
+    "dismiss": "Dismiss",
+    "add": "Add",
+    "go_to_product_page": "Go to Product Page"
 }

@@ -13,5 +13,9 @@
     "quantity": "Cantidad",
     "amount": "Importe",
     "fee": "Cuota",
-    "comment": "Comentario"
+    "comment": "Comentario",
+    "home_page": "Página pricipal",
+    "dismiss": "Restar",
+    "add": "Sumar",
+    "go_to_product_page": "Ir a Product Page"
 }
