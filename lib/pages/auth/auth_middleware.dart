@@ -9,6 +9,7 @@ class AuthGuard extends GetMiddleware {
     if (isAuth) {
       return null;
     }
+
     // else {
     //   return const RouteSettings(name: Routes.login);
     // }
