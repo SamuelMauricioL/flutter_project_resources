@@ -4,6 +4,7 @@ import 'package:flutter_project_resources/db/data_base.dart';
 import 'package:flutter_project_resources/db/shared_preferences/shared_preferences.dart';
 import 'package:flutter_project_resources/http/http.dart';
 import 'package:flutter_project_resources/services/product_service.dart';
+import 'package:flutter_project_resources/services/transaction_service.dart';
 import 'package:get/get.dart';
 
 class DependencyInjection {
@@ -21,5 +22,6 @@ class DependencyInjection {
 
     ///Services
     Get.lazyPut(() => ProductService(), fenix: true);
+    Get.lazyPut(() => TransactionService(), fenix: true);
   }
 }

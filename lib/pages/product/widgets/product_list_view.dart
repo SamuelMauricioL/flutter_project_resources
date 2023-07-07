@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_resources/core/testing/values/key_widgets.dart';
 import 'package:flutter_project_resources/pages/product/product_controller.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,7 @@ class ListViewProducts extends GetView<ProductController> {
           Padding(
             padding: const EdgeInsets.all(10),
             child: TextField(
+              key: const Key(KeyWidgets.searchTextFieldKey),
               decoration: InputDecoration(
                 suffixIcon: const Icon(Icons.search),
                 labelText: 'search'.tr,
@@ -30,7 +32,7 @@ class ListViewProducts extends GetView<ProductController> {
                   title: Text(
                     controller.products[index].name ?? '',
                     style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.green,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
