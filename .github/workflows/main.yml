@@ -8,6 +8,10 @@ jobs:
   build_android:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Dart SDK
+        uses: dart-lang/setup-dart@v1
+        with:
+          dart-version: "2.19.2"
       - uses: actions/checkout@v2
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -21,6 +25,10 @@ jobs:
   build_web:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Dart SDK
+        uses: dart-lang/setup-dart@v1
+        with:
+          dart-version: "2.19.2"
       - uses: actions/checkout@v2
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
