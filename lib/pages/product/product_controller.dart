@@ -1,8 +1,7 @@
 import 'package:flutter_project_resources/models/product_model.dart';
 import 'package:flutter_project_resources/services/product_service.dart';
 import 'package:get/get.dart';
-import 'package:flutter_project_resources/core/extension/future_extension.dart';
-import 'package:optional/optional.dart';
+import 'package:optional_extensions/optional_extensions.dart';
 
 class ProductController extends GetxController {
   final _productService = Get.find<ProductService>();

@@ -1,7 +1,7 @@
-import 'package:flutter_project_resources/http/exceptions/app_exception.dart';
-import 'package:flutter_project_resources/widgets/loading_dialog/loading_dialog.dart';
 import 'package:get/get.dart';
 import 'package:optional/optional.dart';
+import 'package:optional_extensions/src/exceptions/app_exception.dart';
+import 'package:optional_extensions/src/loading_dialog/loading_dialog.dart';
 import 'string_extensions.dart';
 
 typedef FutureException = Future Function(dynamic);

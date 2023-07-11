@@ -1,12 +1,12 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:flutter_project_resources/widgets/loading_dialog/content/base_loading_dialog.dart';
-import 'package:flutter_project_resources/widgets/loading_dialog/content/loading_backdrop_filter.dart';
-import 'package:flutter_project_resources/widgets/loading_dialog/content/status_dialog.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:flutter_project_resources/core/extension/string_extensions.dart';
+import 'package:optional_extensions/src/extension/string_extensions.dart';
+import 'package:optional_extensions/src/loading_dialog/content/base_loading_dialog.dart';
+import 'package:optional_extensions/src/loading_dialog/content/loading_backdrop_filter.dart';
+import 'package:optional_extensions/src/loading_dialog/content/status_dialog.dart';
 
 class LoadingDialog {
   static LoadingDialog _instance = LoadingDialog._init();

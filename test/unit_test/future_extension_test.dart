@@ -1,7 +1,6 @@
-import 'package:flutter_project_resources/core/extension/future_extension.dart';
 import 'package:flutter_project_resources/db/exceptions/db_exception.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:optional/optional.dart';
+import 'package:optional_extensions/optional_extensions.dart';
 
 import 'assertion.dart';
 
