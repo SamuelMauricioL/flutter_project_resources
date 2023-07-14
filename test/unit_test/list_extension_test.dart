@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:optional/optional.dart';
+import 'package:optional_extensions/optional_extensions.dart';
 
 void main() {
   group('firstWhereOptional', () {

@@ -1,8 +1,8 @@
 // ignore_for_file: override_on_non_overriding_member
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_project_resources/widgets/loading_dialog/loading_dialog.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:optional_extensions/optional_extensions.dart';
 
 class FakeDialog implements LoadingDialog {
   @override

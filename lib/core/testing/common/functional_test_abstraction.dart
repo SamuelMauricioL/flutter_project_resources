@@ -2,11 +2,11 @@
 
 import 'package:flutter_project_resources/di/dependency_injection.dart';
 import 'package:flutter_project_resources/environment_build/environment_build.dart';
-import 'package:flutter_project_resources/widgets/loading_dialog/loading_dialog.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:meta/meta.dart';
+import 'package:optional_extensions/optional_extensions.dart';
 import '../utils/fake_dialog.dart';
 import 'controller_injection.dart';
 

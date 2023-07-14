@@ -32,12 +32,8 @@ class HomePage extends GetView<HomeController> {
           ),
           const SizedBox(height: 50),
           ElevatedButton(
-            onPressed: () {
-              // Get.to(const ProductPage());
-              // Get.toNamed(Routes.product);
-              controller.goToProduct();
-            },
-            child: const Text('Go to Product Page'),
+            onPressed: () => controller.goToProduct(),
+            child: Text('go_to_product_page'.tr),
           ),
         ],
       ),
